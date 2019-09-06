@@ -1,0 +1,185 @@
+{% extends 'productdetails.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+{% block body %}
+    <!--
+        <div class="cart-table-area section-padding-100" style="margin-top: 150px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="checkout_details_area mt-50 clearfix">
+
+                            <div class="cart-title">
+                                <h2>Checkout</h2>
+                            </div>
+
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" name="name" value="" placeholder="Name" id="name" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" name="mobile" placeholder="Mobile Number" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="email" class="form-control" name="email" placeholder="Email" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select class="w-100" name="state">
+                                        <option value="haryana">Haryana</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="punjab">Punjab</option>
+                                        <option value="up">Utter Pardesh</option>
+                                        <option value="mp">Madhya Pardesh</option>
+                                        <option value="mh">Maharastra</option>
+                                        <option value="rj">Rajasthan</option>
+                                        <option value="hm">Himachal</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control mb-3" name="city" placeholder="City" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" name="address" placeholder="Address" value="">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" name="pin" placeholder="Pin Code" value="">
+                                    </div>
+                                    </div>
+
+
+
+
+                            <div class="cart-btn mt-100">
+                                <button type="submit" class="btn amado-btn w-100">Add</button>
+                            </div>
+                            </form>
+                            {% if messages %}
+                            {% for i in messages %}
+                            {{i}}
+                            {% endfor %}
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>-->
+    <!-- ##### Main Content Wrapper End ##### -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-1">
+                    <div class="addAdress">
+                        <form method="post" action="#">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1 style="font-weight: 300">Add Address</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="inputBox">
+                                        <div class="inputText">Full Name*</div>
+                                        <input type="text" name="name" class="input" required>
+                                    </div>
+                                </div>
+
+                                <!--    <div class="col-sm-6">
+                                        <div class="inputBox">
+                                            <div class="inputText">Last Name</div>
+                                            <input type="text" name="" class="input">
+                                        </div>
+                                    </div>-->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                     <div class="inputBox">
+                                         <div class="inputText">Email*</div>
+                                         <input type="email" name="email" class="input"  required>
+                                     </div>
+                                 </div>
+
+
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">Mobile*</div>
+                                        <input type="text" name="mobile" class="input" required maxlength="10">
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="inputBox">
+                                        <div class="inputText">Address(House No, Apartment, Street Name)*</div>
+                                        <input type="text" name="address" class="input" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">City*</div>
+                                        <input type="text" name="city" class="input" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                    <select class="input" name="state">
+                                        <option value="haryana">Haryana</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="punjab">Punjab</option>
+                                        <option value="up">Utter Pardesh</option>
+                                        <option value="mp">Madhya Pardesh</option>
+                                        <option value="mh">Maharastra</option>
+                                        <option value="rj">Rajasthan</option>
+                                        <option value="hm">Himachal</option>
+                                    </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">Pincode*</div>
+                                        <input type="text" name="pin" class="input" maxlength="6" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block" style="font-size: 20px">Add Address</button>
+                                </div>
+                            </div>
+                        </form>
+                        {% if messages %}
+                            {% for i in messages %}
+                                {{ i }}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
+</body>
+</html>

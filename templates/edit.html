@@ -1,0 +1,152 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block body %}
+    <div class="cart-table-area section-padding-100" style="margin-top:150px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="alert alert-primary">
+                            <h2>Edit Product</h2>
+                        </div>
+
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+
+
+                                <div class="col-md-12 mb-3">
+                                    <input type="text" class="form-control" name="name" value="{{ Data.name }}">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="text" class="form-control" name="description"
+                                           value="{{ Data.description }}">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="number" class="form-control" name="basicPrice"
+                                           value="{{ Data.basicPrice }}">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="number" class="form-control mb-3" name="discount"
+                                           value="{{ Data.discount }}">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="text" class="form-control" name="color" value="{{ Data.color }}">
+                                </div>
+                                <button type="submit" class="btn btn-info">Edit</button>
+                            </div>
+
+                        </form>
+                        {% if messages %}
+                            <div class="alert alert-success">
+                                {% for i in messages %}
+                                    {{ i }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
+
+    <div class="container" style="margin-top: -18vh">
+        <div class="row">
+            <div class="col-lg-10 offset-1">
+                <div class="addAdress">
+                    <form method="post" action="#" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1 style="font-weight: 300">Update Product Details</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="inputBox">
+                                    <div class="inputText">Product Name*</div>
+                                    <input type="text" name="name" class="input" value="{{ Data.name }}" autofocus
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="inputBox">
+                                    <div class="inputText">Description*</div>
+                                    <input type="text" name="description" class="input" value="{{ Data.description }}"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="inputBox">
+                                    <div class="inputText">Base Price*</div>
+                                    <input type="text" name="basicPrice" class="input" value="{{ Data.basicPrice }}"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="inputBox">
+                                    <div class="inputText">Discount Rate*</div>
+                                    <input type="text" name="discount" class="input" value="{{ Data.discount }}"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="inputBox">
+                                    <div class="inputText">Colour*</div>
+                                    <input type="text" name="color" class="input" value="{{ Data.color }}" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block"
+                                        style="font-size: 20px">Update Product
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="/adminpage/" class="btn btn-dark rounded-pill py-2 btn-block"
+                                   style="font-size: 20px">Back To Admin</a>
+                            </div>
+                        </div>
+                    </form>
+
+                    {% if messages %}
+                        <div class="row py-2">
+                            <div class="col-sm-12">
+                                <div class="btn btn-dark rounded-pill py-2 btn-block" style="font-size: 20px">
+                                    {% for i in messages %}
+                                        {{ i }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+</html>

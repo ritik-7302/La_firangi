@@ -1,0 +1,62 @@
+<!doctype html>
+{% extends 'productdetails.html' %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    {% block title %}
+  <title>Signup</title>
+    {% endblock %}
+</head>
+{% block body %}
+
+<div class="wrapper" >
+  <div class="container my-5">
+   <center><h1> SignUp </h1>  </center>
+      <form action=" " method="post">
+          {% csrf_token %}
+        <div class="row">
+            <div class="col-12 mb-3">
+                <label style="color:white">Username</label>
+                <input type="text" style="background:#ccffff" class="form-control" name="uname" placeholder="User Name" value="" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label style="color:white">First Name</label>
+                <input type="text" style="background:#ccffff" class="form-control" name="first_name" value="" placeholder="First Name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label style="color:white">Last Name</label>
+                <input type="text" style="background:#ccffff" class="form-control" name="last_name" value="" placeholder="Last Name">
+            </div>
+            <div class="col-12 mb-3">
+                <label style="color:white">Email</label>
+                <input type="email" style="background:#ccffff" class="form-control" name="email" placeholder="Mail Id" value="">
+            </div>
+            <div class="col-12 mb-3">
+                <label style="color:white">Set Password</label>
+                <input type="password" style="background:#ccffff" class="form-control" name="pward" placeholder="Password" value="">
+            </div>
+            <div class="col-12 mb-3">
+                <label style="color:white">Confirm Password</label>
+                <input type="password" style="background:#ccffff" class="form-control" name="cpward" placeholder="Confirm Password" value="">
+            </div>
+            <div class="col-12 mb-3">
+                <button type="submit" class="btn btn-success">SignUp</button>
+            </div>
+            <div class="col-12 mb-3">
+                <a href="/register/" class="btn btn-primary">Already Have an Account </a></center>
+            </div>
+        </div>
+      </form>
+        {% if messages %}
+        <div class="alert alert-danger">
+          {% for i in messages %}
+                {{i}}
+          {% endfor %}
+         </div>
+        {% endif %}
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,228 @@
+{% extends 'productdetails.html' %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>Add Product</title>{% endblock %}
+</head>
+<body>
+{% block body %}
+    <!--
+    <div class="cart-table-area section-padding-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="alert alert-primary">
+                            <h2>Add Product</h2>
+                        </div>
+
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <select class="w-100" name="cat">
+                                        {% for i in Cat %}
+                                            <option value={{ i }}>{{ i }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="text" class="form-control" name="id" value=""
+                                           placeholder="Enter product Id" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="text" class="form-control" name="name" value=""
+                                           placeholder="Enter product Name" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="text" class="form-control" name="description"
+                                           placeholder="Description">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <select class="w-100" name="siz">
+                                        {% for i in Siz %}
+                                            <option value={{ i }}>{{ i }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="number" class="form-control" name="basicPrice"
+                                           placeholder="Enter Basic Price" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <input type="number" class="form-control mb-3" name="discount"
+                                           placeholder="Discount" value="">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="text" class="form-control" name="color" placeholder="Enter Color"
+                                           value="">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="file" name="img1">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="file" name="img2">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="file" name="img3">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="file" name="img4">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="file" name="img5">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input type="file" name="img6">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <button type="submit" class="btn btn-info">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                        {% if messages %}
+                            <div class="alert alert-success">
+                                {% for i in messages %}
+                                    {{ i }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!-- ##### Main Content Wrapper End ##### -->
+
+        <div class="container" style="margin-top: -18vh">
+            <div class="row">
+                <div class="col-lg-10 offset-1">
+                    <div class="addAdress">
+                        <form method="post" action="#" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1 style="font-weight: 300">Add New Product</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">Product Id*</div>
+                                        <input type="text" name="id" class="input" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">Product Name*</div>
+                                        <input type="text" name="name" class="input" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="inputBox">
+                                        <div class="inputText">Description*</div>
+                                        <input type="text" name="description" class="input" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <select class="input" name="cat">
+                                            {% for i in Cat %}
+                                                <option value="{{ i }}">{{ i }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">Base Price*</div>
+                                        <input type="text" name="basicPrice" class="input" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">Discount Rate*</div>
+                                        <input type="text" name="discount" class="input" required>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="inputBox">
+                                    <div class="inputText">Colour*</div>
+                                        <input type="text" name="color" class="input" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="inputBox">
+                                    <input type="file" name="img1" class="input">
+                                </div>
+                            </div><div class="col-sm-4">
+                                <div class="inputBox">
+                                    <input type="file" name="img2" class="input">
+                                </div>
+                            </div><div class="col-sm-4">
+                                <div class="inputBox">
+                                    <input type="file" name="img3" class="input">
+                                </div>
+                            </div><div class="col-sm-4">
+                                <div class="inputBox">
+                                    <input type="file" name="img4" class="input">
+                                </div>
+                            </div><div class="col-sm-4">
+                                <div class="inputBox">
+                                    <input type="file" name="img5" class="input">
+                                </div>
+                            </div><div class="col-sm-4">
+                                <div class="inputBox">
+                                    <input type="file" name="img6" class="input">
+                                </div>
+                            </div>
+                        </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block"
+                                                style="font-size: 20px">Add Product
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-6">
+                             <a href="/adminpage/" class="btn btn-dark rounded-pill py-2 btn-block" style="font-size: 20px">Back To Admin</a>
+                            </div>
+                                </div>
+
+                        </form>
+                        {% if messages %}
+                            {% for i in messages %}
+                                {{ i }}
+                            {% endfor %}
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock body %}
+
+</body>
+</html>

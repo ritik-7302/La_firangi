@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+    {% block title %}<title>Cart</title>{% endblock %}
+</head>
+{% block body %}
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="cart-title mt-50">
+                    <div class="alert alert-danger">
+                        Welcome : {{request.user.username}}
+                    </div>
+                    <h2>Your Orders</h2>
+                </div>
+
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive">
+                        <div class="container">
+                            <div class="row">
+                                <thead>
+                                <tr>
+                                    <div class="col-lg-4">
+                                        <th></th>
+                                    </div>
+                                    <div class="col-lg-8">
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Size</th>
+                                    <th>Quantity</th>
+</div>
+                                    <!--<th>Add</th>-->
+                                    <!--<th>delete</th>-->
+                                </tr>
+                                </thead>
+                            </div>
+                        </div>
+
+                                <tbody>
+                                {% for i in Data %}
+                                <tr>
+                                    <td class="cart_product_img">
+                                        <a href="#"><img src="{{i.order_product.img1.url}}" alt="Product"
+                                                         class="img-fluid" height="10%" width="2%"></a>
+                                    </td>
+                                    <td class="cart_product_desc">
+                                        <h5>{{i.order_product.name}}</h5>
+                                    </td>
+                                    <td class="price">
+                                        <span>{{i.order_product.price}}</span>
+                                    </td>
+                                    <td class="size">
+                                        <span>{{i.order_product.size}}</span>
+                                    </td>
+                                    <td class="qty">
+                                        <div class="qty-btn d-flex">
+                                            <h6>Qty </h6>
+                                            <h5>{{i.count}}</h5>
+                                        </div>
+                                    </td>
+                                    <td class="btn">
+                                        <a href="/cancelorder/{{i.ordernumber}}/">CANCEL ORDER</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<!-- ##### Main Content Wrapper End ##### -->
+{% endblock %}
+</html>
